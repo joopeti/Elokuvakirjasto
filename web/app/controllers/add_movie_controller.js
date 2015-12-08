@@ -1,5 +1,5 @@
 Elokuvakirjasto.controller('AddMovieController', function ($scope, FirebaseService, $location) {
-
+    $scope.message = "";
     $scope.addMovie = function () {
         if ($scope.name !== '' && $scope.director !== '' && $scope.year !== '' && $scope.description !== '') {
             FirebaseService.addMovie({
@@ -10,7 +10,7 @@ Elokuvakirjasto.controller('AddMovieController', function ($scope, FirebaseServi
             });
             $location.path('/');
         } else{
-            //error
+            $scope.message = "Täytä kaikki kentät!";
         }
     }
 })

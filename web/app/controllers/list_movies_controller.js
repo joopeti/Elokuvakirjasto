@@ -2,4 +2,7 @@ Elokuvakirjasto.controller('MovieListController', function($scope, FirebaseServi
     
     $scope.movies = FirebaseService.getMovies();
     
+    $scope.remove = function(movie){
+        FirebaseService.remove(movie);
+    }
 });

@@ -2,7 +2,9 @@
 <div id="listMovies">
     <ul>
         <li ng-repeat="movie in movies">
-            {{movie.name}}
+            <a ng-href="#/movies/{{movie.$id}}">{{movie.name}}</a> 
+            | <a ng-href="#/movies/{{movie.$id}}/edit">edit</a>
+            | <a ng-href="#/" ng-click="remove(movie)">remove</a>
         </li>
     </ul>
 </div>
