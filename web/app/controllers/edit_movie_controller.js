@@ -1,4 +1,4 @@
-Elokuvakirjasto.controller('EditMovieController', function($scope, FirebaseService, $routeParams){
+Elokuvakirjasto.controller('EditMovieController', function($scope, FirebaseService, $routeParams, $location){
     console.log("edit movie controller");
     $scope.message = "";
     if($routeParams.key){
