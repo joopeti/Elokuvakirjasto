@@ -5,8 +5,4 @@ Elokuvakirjasto.controller('ShowMovieController', function($scope, FirebaseServi
             $scope.movie = data;
         });
     }
-    
-    this.ok = function(){
-        //ok
-    }
 });

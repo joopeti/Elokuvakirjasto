@@ -7,7 +7,7 @@ Elokuvakirjasto.controller('EditMovieController', function($scope, FirebaseServi
         });
     }
     
-    this.save = function(){
+    $scope.save = function(){
         if ($scope.movie.name !== '' && $scope.movie.director !== '' && $scope.movie.year !== '' && $scope.movie.description !== '') {
             FirebaseService.save($scope.movie);
             $location.path('/');
