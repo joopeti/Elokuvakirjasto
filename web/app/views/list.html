@@ -1,3 +1,23 @@
+<h2 id="otsikko">Search movies</h2>
+<div id="search">
+    <form name="searchform">
+    <input type="text" ng-model="title" placeholder="movie name" required>
+    <input type="text" ng-model="year" placeholder="year published">
+    <button ng-click="findMovie()">search</button>
+    </form>
+</div>
+<div id="searchResults">
+    <ul>
+        <li ng-repeat="movie in results">
+            <a ng-href="http://www.imdb.com/title/{{movie.imdbID}}">{{movie.Title}}</a> 
+            <span>{{movie.Year}}</span>
+        </li>
+    </ul>
+    <h2 ng-show="searched && !results" >No search results!</h2>
+    <h2 ng-show="searched && results.length == 1" >Found one movie</h2>
+    <h2 ng-show="searched && results.length > 1" >Found {{results.length}} movies</h2>
+</div>
+
 <h2 id="otsikko">List of movies</h2>
 <div id="listMovies">
     <ul>

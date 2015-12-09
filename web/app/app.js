@@ -24,3 +24,7 @@ Elokuvakirjasto.config(function($routeProvider){
     redirectTo: '/'
     });
 });
+
+Elokuvakirjasto.config(['$httpProvider', function($httpProvider) {
+  delete $httpProvider.defaults.headers.common["X-Requested-With"]
+}]);
