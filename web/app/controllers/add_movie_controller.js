@@ -1,4 +1,8 @@
-Elokuvakirjasto.controller('AddMovieController', function ($scope, FirebaseService, $location) {
+Elokuvakirjasto.controller('AddMovieController', function ($scope, FirebaseService, $location, currentAuth) {
+      if(!currentAuth){
+        $location.path('/login');
+      }
+    
     $scope.addMovie = function () {
         if ($scope.name !== '' && $scope.director !== '' && $scope.year !== '' && $scope.description !== '') {
             FirebaseService.addMovie({

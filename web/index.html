@@ -11,6 +11,8 @@
     <div id="nav">
         <a ng-href="#/">list movies</a> 
         <a ng-href="#/movies/new">add new</a>
+        <a ng-href="#/login" ng-if="!userLoggedIn">login</a>
+        <button ng-click="logOut()" ng-if="userLoggedIn">Kirjaudu ulos</button>
     </div>
     <div ng-view></div>
 
@@ -24,9 +26,12 @@
     <script src="app/app.js"></script>    
     <script src="app/services/firebase_service.js"></script>  
     <script src="app/services/APIService.js"></script>  
+    <script src="app/services/authentication_service.js"></script>  
     <script src="app/controllers/add_movie_controller.js"></script>  
     <script src="app/controllers/show_movie_controller.js"></script>  
     <script src="app/controllers/edit_movie_controller.js"></script>  
     <script src="app/controllers/list_movies_controller.js"></script>  
+    <script src="app/controllers/search_controller.js"></script>
+    <script src="app/controllers/user_controller.js"></script>
   </body>
 </html>
